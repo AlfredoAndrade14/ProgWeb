@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 05</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function inverterNums(){
+                var texto = document.getElementById("txt").value;
+                var textoAux = '';
+                for (var i = texto.length - 1; i >= 0; i--){
+                    textoAux += texto[i];
+                }
+                document.write("Numeros invertidos: " + textoAux);
+            }
+        </script>
+    </head>
+
+    <body>
+        Texto: <input type="text" id="txt">
+        <input type="button" value="Inverter numeros" onclick="inverterNums()">
+    </body>
+
+</html> 

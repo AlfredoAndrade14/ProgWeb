@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício 09</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function listaNums() {
+        var numeros = document.getElementById("txtNumeros").value;
+        numeros = numeros.split(",").map((num) => parseInt(num, 10));
+
+        sum = numeros.reduce((acc, num) => acc + num, 0);
+        average = sum / numeros.length;
+
+        positiveCount = numeros.filter((num) => num > 0).length;
+        negativeCount = numeros.filter((num) => num < 0).length;
+        totalCount = numeros.length;
+        positivePercentage = (positiveCount / totalCount) * 100;
+        negativePercentage = (negativeCount / totalCount) * 100;
+
+        document.write("Média aritmética: "+ average +"<br>");
+        document.write("Quantidade de valores positivos: "+ positiveCount +"<br>");
+        document.write("Quantidade de valores negativos: "+ negativeCount +"<br>");
+        document.write("Percentual de valores positivos: "+ positivePercentage.toFixed(2) +"<br>");
+        document.write("Percentual de valores negativos: "+ negativePercentage.toFixed(2) +"<br>");
+      }
+    </script>
+  </head>
+
+  <body>
+    Números: <input type="text" id="txtNumeros" />
+    <input type="button" value="dados" onclick="listaNums()" />
+  </body>
+</html>

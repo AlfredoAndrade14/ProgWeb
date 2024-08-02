@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 07</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sumNums(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",").map(num => parseInt(num, 10));
+                numeros = numeros.filter(num => num % 2 !== 0 & num % 3 == 0);
+                sum = numeros.reduce((acc, num) => acc + num, 0)
+                document.write("A Soma é: " + sum + "<br>");
+            }
+        </script>
+    </head>
+
+    <body>
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Somar" onclick="sumNums()">
+    </body>
+
+</html> 
